@@ -29,8 +29,14 @@
                 autocomplete="off"
               />
             </label>
-            <button class="button countries__search-cleaner" type="button">
-              <span class="countries__search-cross">X</span>
+            <button
+              class="button flex-center-wrap countries__search-cleaner visually-hidden"
+              type="button"
+              aria-label="clear search button"
+            >
+              <svg class="countries__search-cross" width="15" height="15">
+                <use href="./images/icons-sprite.svg#icon-cross"></use>
+              </svg>
             </button>
           </div>
         </form>

@@ -24,7 +24,7 @@ body {
   margin: 0 auto;
 }
 
-.flex-wrap {
+.flex-center-wrap {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,7 +35,9 @@ body {
 }
 
 .countries__title {
+  font-size: 30px;
   text-align: center;
+  color: #33eb0e;
 }
 
 .countries__form {
@@ -57,13 +59,18 @@ body {
 
 .countries__input {
   width: 100%;
-  height: 40px;
   display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
   border-style: solid;
   border-width: 4px;
   border-color: transparent;
   border-radius: 5px;
   outline: none;
+  &::placeholder {
+    color: rgba(51, 235, 14, 0.5);
+  }
   &:hover,
   &:focus {
     border-color: #33eb0e;
@@ -77,12 +84,12 @@ body {
   transform: translate(-50%, -50%);
   width: 30px;
   height: 30px;
+  color: #33eb0e;
   background-color: transparent;
 }
 
 .countries__search-cross {
-  font-weight: 700;
-  color: #33eb0e;
+  fill: currentColor;
 }
 
 .countries__info {
@@ -90,26 +97,46 @@ body {
   // margin-left: auto;
 }
 
+.countries__wrap {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
 .countries__info-wrap {
+  margin-right: 10px;
 }
 
 .countries__list {
   text-align: center;
 }
 
-.countries__name,
 .countries__capital,
 .countries__population,
 .countries__languages {
-  /* display: block; */
+  margin-top: 0;
   margin-bottom: 5px;
 }
 
-.countries__name {
+.countries__name,
+.sub-title {
   font-weight: 700;
 }
 
+.countries__name {
+  // margin-right: auto;
+  // margin-left: auto;
+  margin-bottom: 15px;
+  font-size: 22px;
+  text-align: center;
+}
+
+.countries__languages-item {
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
 .countries__flag {
+  display: block;
   min-width: 160px;
   min-height: 100px;
   width: 26%;

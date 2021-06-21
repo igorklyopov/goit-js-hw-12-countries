@@ -11,11 +11,15 @@
   border-bottom: none;
   border-left: none;
   animation: spinner5 600ms linear infinite;
+
+  &.is-hidden {
+    display: none;
+  }
 }
 
-.loading-spinner.is-hidden {
-  display: none;
-}
+// .loading-spinner.is-hidden {
+//   display: none;
+// }
 
 @keyframes spinner5 {
   to {
