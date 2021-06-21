@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Countries (Homework 12)</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.2.0/modern-normalize.min.css"
+      integrity="sha512-sqIVMkf5f8XGYI/UZYGs7wODxlUeoj9JknataPfUwtvrSKWMHrMXGZ7Evb6nabFYJQG15vFFyALe6r0nWCD1Ug=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <section class="countries">
+      <div class="container">
+        <h2 class="countries__title">Countries</h2>
+        <form class="countries__form">
+          <div class="counrtries__form-wrap">
+            <label class="countries__search">
+              <span class="visually-hidden">Country name input</span>
+              <input
+                class="countries__input"
+                type="text"
+                placeholder="Enter country name"
+                name="countries-search"
+                autocomplete="off"
+              />
+            </label>
+            <button class="button countries__search-cleaner" type="button">
+              <span class="countries__search-cross">X</span>
+            </button>
+          </div>
+        </form>
+        <div class="countries__info">
+          <button class="loading-spinner is-hidden"></button>
+        </div>
+      </div>
+    </section>
+    <script src="./index.js"></script>
+  </body>
+</html>

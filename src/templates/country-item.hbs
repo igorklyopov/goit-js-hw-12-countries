@@ -1,0 +1,15 @@
+{{#each this}}
+<div class="flex-wrap">
+  <div class="countries__info-wrap">
+    <p class="countries__name">{{this.name}}</p>
+    <p class="countries__capital">Capital: {{this.capital}}</p>
+    <p class="countries__population">Population: {{this.population}}</p>
+    <ul class="list countries__languages-list">Languages: 
+    {{#each languages}}
+      <li class="countries__languages-item">{{name}}</li>
+    {{/each}}
+    </ul>
+  </div>
+  <img class="countries__flag" src="{{this.flag}}" alt="Flag of {{this.name}}">
+</div>
+{{/each}}
