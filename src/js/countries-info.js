@@ -1,27 +1,29 @@
 const debounce = require('lodash.debounce');
 import fetchCountries from './fetch-countries';
 import { showCountriesClearButton, hideCountriesClearButton } from './countries-clear-button';
-import { inputCountriesRef } from './refs';
+import { inputCountriesRef, countriesInfoRef } from './refs';
 import renderCountries from './render-countries';
+import { showLoadProgress, hideLoadProgress } from './load-progress';
 
 inputCountriesRef.addEventListener('input', debounce(onInputCountries, 500));
+inputCountriesRef.addEventListener('input', showLoadProgress);
+
+const correctInputCountriesValue = () => {
+  let countryName = inputCountriesRef.value.trim();
+  if (countryName !== '' && isNaN(parseInt(countryName))) {
+    return countryName;
+  }
+};
 
 function onInputCountries() {
   let inputCountriesValue = inputCountriesRef.value;
-  let countryName = inputCountriesValue.trim();
 
-  if (countryName !== '' && isNaN(parseInt(countryName))) {
-    fetchCountries(countryName).then(renderCountries);
-  }
+  fetchCountries(correctInputCountriesValue()).then(renderCountries);
+  hideLoadProgress();
+
   if (inputCountriesValue !== '') {
     showCountriesClearButton();
   } else {
     hideCountriesClearButton();
   }
 }
-
-//Ukraine
-//canada
-// let n = parseInt('Ukraine'.trim());
-// console.log(isNaN(n));
-// console.log(Number.isNaN(n));

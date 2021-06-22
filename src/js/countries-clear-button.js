@@ -14,4 +14,5 @@ export const showCountriesClearButton = () => {
 export const hideCountriesClearButton = () => {
   countriesClearButtonRef.classList.add('visually-hidden');
   countriesClearButtonRef.removeEventListener('click', onCountriesClearButtonClick);
+  countriesInfoRef.innerHTML = '';
 };
