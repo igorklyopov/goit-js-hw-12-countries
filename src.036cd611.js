@@ -30,4 +30,4 @@ var e,t=arguments[3];!function(t,r){"object"==typeof exports&&"object"==typeof m
 },{"lodash.debounce":"PZFh","./fetch-countries":"bOLx","./countries-clear-button":"HytB","./refs":"VyiV","./render-countries":"aaxI","./load-progress":"DtV2"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/countries-info");
 },{"./sass/main.scss":"clu1","./js/countries-info":"lXCZ"}]},{},["Focm"], null)
-//# sourceMappingURL=/goit-js-hw-12-countries/src.c5346209.js.map
+//# sourceMappingURL=/goit-js-hw-12-countries/src.036cd611.js.map
