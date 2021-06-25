@@ -8,17 +8,16 @@ import { showLoadProgress, hideLoadProgress } from './load-progress';
 inputCountriesRef.addEventListener('input', debounce(onInputCountries, 500));
 inputCountriesRef.addEventListener('input', showLoadProgress);
 
-const correctInputCountriesValue = () => {
-  let countryName = inputCountriesRef.value.trim();
-  if (countryName !== '' && isNaN(parseInt(countryName))) {
-    return countryName;
-  }
-};
+const validInputCountriesValue = value =>
+  !/[0-9,/,.,-,~,!,@,#,$,%,^,&,*,:,:,',?,<,>,_,\,№,|]/.test(value) && value !== '';
 
 function onInputCountries() {
   let inputCountriesValue = inputCountriesRef.value;
+  let countryName = inputCountriesRef.value.trim();
 
-  fetchCountries(correctInputCountriesValue()).then(renderCountries);
+  if (validInputCountriesValue(countryName)) {
+    fetchCountries(countryName).then(renderCountries);
+  }
   hideLoadProgress();
 
   if (inputCountriesValue !== '') {
