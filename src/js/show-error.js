@@ -1,4 +1,4 @@
-const { alert, notice, info, success, error } = require('@pnotify/core');
+const { error } = require('@pnotify/core');
 import '@pnotify/core/dist/PNotify.css';
 import '@pnotify/core/dist/BrightTheme.css';
 

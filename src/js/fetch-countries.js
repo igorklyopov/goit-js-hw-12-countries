@@ -1,9 +1,7 @@
-import { showError } from './show-error';
+const BASE_URL = 'https://restcountries.eu/rest/v2';
 
-const BASE_URL = 'https://restcountries.eu/rest/v2/name';
-
-export default function fetchCountries(searchQuery) {
-  return fetch(`${BASE_URL}/${searchQuery}`).then(response => {
+export default function fetchCountries(searchSetting, searchQuery) {
+  return fetch(`${BASE_URL}/${searchSetting}/${searchQuery}`).then(response => {
     if (response.status === 200) {
       return response.json();
     } else {

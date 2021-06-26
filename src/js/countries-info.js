@@ -1,7 +1,7 @@
 const debounce = require('lodash.debounce');
 import fetchCountries from './fetch-countries';
-import { showCountriesClearButton, hideCountriesClearButton } from './countries-clear-button';
-import { inputCountriesRef, countriesInfoRef } from './refs';
+import { showCountriesClearButton, hideCountriesClearButton } from './countries-clear';
+import { inputCountriesRef } from './refs';
 import renderCountries from './render-countries';
 import { showLoadProgress, hideLoadProgress } from './load-progress';
 import { showError } from './show-error';
@@ -17,7 +17,7 @@ function onInputCountries() {
   let countryName = inputCountriesRef.value.trim();
 
   if (validInputCountriesValue(countryName)) {
-    fetchCountries(countryName)
+    fetchCountries('name', countryName)
       .then(renderCountries)
       .catch(error => {
         console.error(error);
@@ -25,9 +25,9 @@ function onInputCountries() {
           'A country with that name has not been found! Please check the entry is correct!',
         );
       });
-  } else if (countryName !== '') {
+  } else if (inputCountriesValue !== '') {
     showError(
-      'Country names do not contain numbers and special characters like, _ - / + % ; : . Please enter only letters, please!',
+      'Country names do not contain numbers and special characters like / , _ -  + % ; : ... etc. Enter only letters, please!',
     );
   }
 

@@ -121,6 +121,14 @@ body {
   text-align: center;
 }
 
+.countries__name--hover {
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+    cursor: pointer;
+  }
+}
+
 .countries__languages-item {
   margin-top: 5px;
   margin-left: 10px;
